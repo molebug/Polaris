@@ -22,7 +22,7 @@
         <div id="pageTop"></div>
         <div id="pageHeader">
           <div id="anniversary">
-            <span>18576</span>
+            <span id="s1"></span>
           </div>
           <ul id="pageNav">
         
@@ -96,6 +96,16 @@
     <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
     <script>
+     
+let start_time = new Date('2020-07-01').getTime()  //获取规定日期
+let end_time = new Date().getTime()   //获取当前时间
+let arr = [] //创建空数组
+//对i进行复制，i每次添加一天（86400000为一天的秒数）
+for (let i = start_time; i < end_time; i = i + 86400000) {
+	arr.push(i) //将i放入数组中
+}
+var item = arr.length;
+document.getElementById('s1').value = item;
 
         var {
             Query
